@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   FiInfo,
@@ -354,13 +355,13 @@ const About = () => {
               target for today.
             </p>
           </div>
-          <a
-            href="/dashboard"
+          <Link
+            to="/dashboard"
             className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold px-3 py-2 rounded-lg bg-emerald-400 text-slate-900 hover:bg-emerald-300 active:scale-95 transition"
           >
             Open Dashboard
             <FiChevronRight size={14} />
-          </a>
+          </Link>
         </motion.section>
       </motion.div>
     </div>
