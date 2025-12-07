@@ -1,4 +1,3 @@
-// src/components/RobotBadge.jsx
 import React, { useEffect, useState } from "react";
 
 export default function RobotBadge({

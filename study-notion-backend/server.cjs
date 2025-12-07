@@ -1,5 +1,3 @@
-/* server.cjs - FINAL (chat + quiz + summarize) using OpenRouter */
-
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");

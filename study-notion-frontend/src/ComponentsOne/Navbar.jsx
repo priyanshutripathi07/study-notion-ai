@@ -48,7 +48,6 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
   return (
     <header className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur border-b border-slate-800">
       <div className="max-w-[1160px] mx-auto px-4 py-3 flex items-center justify-between">
-        
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <img
@@ -153,10 +152,34 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
       {menu && (
         <div className="md:hidden bg-slate-900 border-t border-slate-800 p-3">
           <div className="flex flex-col gap-2">
-            <NavLink to="/" label="Home" icon={<FiHome />} active={loc.pathname === "/"} onClick={() => setMenu(false)} />
-            <NavLink to="/about" label="About" icon={<FiInfo />} active={loc.pathname === "/about"} onClick={() => setMenu(false)} />
-            <NavLink to="/contact" label="Contact" icon={<FiPhone />} active={loc.pathname === "/contact"} onClick={() => setMenu(false)} />
-            <NavLink to="/history" label="History" icon={<FiClock />} active={loc.pathname === "/history"} onClick={() => setMenu(false)} />
+            <NavLink
+              to="/"
+              label="Home"
+              icon={<FiHome />}
+              active={loc.pathname === "/"}
+              onClick={() => setMenu(false)}
+            />
+            <NavLink
+              to="/about"
+              label="About"
+              icon={<FiInfo />}
+              active={loc.pathname === "/about"}
+              onClick={() => setMenu(false)}
+            />
+            <NavLink
+              to="/contact"
+              label="Contact"
+              icon={<FiPhone />}
+              active={loc.pathname === "/contact"}
+              onClick={() => setMenu(false)}
+            />
+            <NavLink
+              to="/history"
+              label="History"
+              icon={<FiClock />}
+              active={loc.pathname === "/history"}
+              onClick={() => setMenu(false)}
+            />
 
             {isLoggedIn && (
               <Link
@@ -165,7 +188,9 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
                 className="relative mt-1 flex items-center justify-center gap-2 px-5 py-2 rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 text-slate-900 font-semibold"
               >
                 Dashboard
-                {isDash && <span className="absolute -top-1 right-2 w-2 h-2 bg-emerald-700 rounded-full animate-pulse" />}
+                {isDash && (
+                  <span className="absolute -top-1 right-2 w-2 h-2 bg-emerald-700 rounded-full animate-pulse" />
+                )}
               </Link>
             )}
 

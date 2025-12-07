@@ -8,7 +8,7 @@ export default function Login({ setIsLoggedIn }) {
       title="Welcome back"
       desc1="Log in to continue your study journey."
       desc2="Ask doubts, generate quizzes and track notes in one place."
-      image={LoginHero}        // 👈 yahan new login hero image
+      image={LoginHero}
       formtype="login"
       setIsLoggedIn={setIsLoggedIn}
     />

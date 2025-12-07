@@ -1,4 +1,3 @@
-// src/ComponentsOne/Tempelate.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import LoginForm from "./LoginForm";
@@ -26,10 +25,7 @@ const Tempelate = ({ title, desc1, desc2, image, formtype, setIsLoggedIn }) => {
     >
       <div className="flex flex-col md:flex-row items-stretch gap-8 md:gap-10">
         {/* LEFT: Card + robot + form */}
-        <section
-          className="w-full md:w-1/2"
-          aria-label="Authentication form"
-        >
+        <section className="w-full md:w-1/2" aria-label="Authentication form">
           <div className="rounded-3xl bg-slate-900/95 border border-slate-800 shadow-[0_18px_40px_rgba(15,23,42,0.9)] px-6 py-7 sm:px-8 sm:py-8 relative overflow-hidden">
             {/* soft gradient */}
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(52,211,153,0.18),transparent_55%),radial-gradient(circle_at_bottom,_rgba(56,189,248,0.16),transparent_60%)] opacity-80" />

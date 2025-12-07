@@ -1,5 +1,3 @@
-// server.js  (CommonJS version – perfect for your setup)
-
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");

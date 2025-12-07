@@ -1,4 +1,3 @@
-// src/ComponentsOne/AiPanel.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -96,49 +95,44 @@ export default function AiPanel() {
       </div>
 
       {/* Input area */}
-     <form onSubmit={handleAsk} className="space-y-3">
+      <form onSubmit={handleAsk} className="space-y-3">
+        <textarea
+          rows={5} // height increased
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+          placeholder="Example: Explain binary search in simple language with C++ example..."
+          className="w-full rounded-2xl bg-slate-950/80 border border-slate-700 px-3 py-3 text-xs md:text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-400 focus:border-indigo-400 resize-none"
+        />
 
-  <textarea
-    rows={5}   // height increased
-    value={question}
-    onChange={(e) => setQuestion(e.target.value)}
-    placeholder="Example: Explain binary search in simple language with C++ example..."
-    className="w-full rounded-2xl bg-slate-950/80 border border-slate-700 px-3 py-3 text-xs md:text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-400 focus:border-indigo-400 resize-none"
-  />
+        <div className="flex items-center justify-end gap-2">
+          {question.trim() && (
+            <button
+              type="button"
+              onClick={handleClear}
+              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-[11px] bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition"
+            >
+              <FiTrash2 size={12} /> Clear
+            </button>
+          )}
 
-  <div className="flex items-center justify-end gap-2">
-    
-    {question.trim() && (
-      <button
-        type="button"
-        onClick={handleClear}
-        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-[11px] bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition"
-      >
-        <FiTrash2 size={12} /> Clear
-      </button>
-    )}
-
-    <button
-      type="submit"
-      disabled={loading}
-      className="inline-flex items-center gap-1 px-4 py-2 rounded-xl text-[11px] md:text-xs font-semibold bg-gradient-to-r from-indigo-400 to-cyan-400 text-slate-900 hover:brightness-110 active:scale-95 disabled:opacity-60 transition"
-    >
-      {loading ? (
-        <span className="flex items-center gap-1">
-          <span className="w-3 h-3 border-2 border-slate-900 border-t-transparent rounded-full animate-spin" />
-          Thinking...
-        </span>
-      ) : (
-        <>
-          <FiSend size={13} /> Ask doubt
-        </>
-      )}
-    </button>
-
-  </div>
-
-</form>
-
+          <button
+            type="submit"
+            disabled={loading}
+            className="inline-flex items-center gap-1 px-4 py-2 rounded-xl text-[11px] md:text-xs font-semibold bg-gradient-to-r from-indigo-400 to-cyan-400 text-slate-900 hover:brightness-110 active:scale-95 disabled:opacity-60 transition"
+          >
+            {loading ? (
+              <span className="flex items-center gap-1">
+                <span className="w-3 h-3 border-2 border-slate-900 border-t-transparent rounded-full animate-spin" />
+                Thinking...
+              </span>
+            ) : (
+              <>
+                <FiSend size={13} /> Ask doubt
+              </>
+            )}
+          </button>
+        </div>
+      </form>
 
       {/* Answer area */}
       <div className="mt-4">

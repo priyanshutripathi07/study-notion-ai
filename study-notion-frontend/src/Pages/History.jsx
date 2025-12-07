@@ -1,4 +1,3 @@
-// src/Pages/History.jsx
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -234,9 +233,7 @@ const History = () => {
             }
             // case: per-user map
             else if (parsed && typeof parsed === "object") {
-              const mine = Array.isArray(parsed[userId])
-                ? parsed[userId]
-                : [];
+              const mine = Array.isArray(parsed[userId]) ? parsed[userId] : [];
               mine.forEach((n) => {
                 const looksNote =
                   n &&

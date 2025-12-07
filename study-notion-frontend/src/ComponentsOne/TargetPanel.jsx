@@ -1,4 +1,3 @@
-// src/ComponentsOne/TargetPanel.jsx
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FiTarget, FiPlus, FiCheckCircle, FiTrash2 } from "react-icons/fi";

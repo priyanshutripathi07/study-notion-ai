@@ -12,9 +12,7 @@ import Signup from "./Pages/Signup";
 import Profile from "./Pages/Profile";
 
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(
-    !!localStorage.getItem("token")
-  );
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
@@ -58,9 +56,7 @@ export default function App() {
 
       <footer className="py-5 text-center text-xs md:text-sm text-slate-500 border-t border-slate-800">
         Made with ❤ by{" "}
-        <span className="text-sky-300 font-semibold">
-          Priyanshu Tripathi
-        </span>
+        <span className="text-sky-300 font-semibold">Priyanshu Tripathi</span>
       </footer>
     </div>
   );

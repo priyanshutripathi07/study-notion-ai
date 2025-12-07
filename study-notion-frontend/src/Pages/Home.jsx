@@ -528,7 +528,9 @@ const Home = () => {
               {savedFocus.minutes && (
                 <p className="mt-1 text-[10px] text-slate-500">
                   Session: {savedFocus.minutes} minutes
-                  {savedFocus.savedAt ? ` • Saved at ${savedFocus.savedAt}` : ""}
+                  {savedFocus.savedAt
+                    ? ` • Saved at ${savedFocus.savedAt}`
+                    : ""}
                 </p>
               )}
             </div>

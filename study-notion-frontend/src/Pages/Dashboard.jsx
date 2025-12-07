@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import MainRobo from '../assets/robotDash.png'
+import MainRobo from "../assets/robotDash.png";
 import {
   FiArrowRight,
   FiHelpCircle,

@@ -74,7 +74,7 @@ body,
     padding: 16px;
   }
 }
-/* quick z-index safety for header & main clickable areas */
+
 header {
   position: relative;
   z-index: 50;

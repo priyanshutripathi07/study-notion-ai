@@ -1,5 +1,3 @@
-// src/utils/theme.js
-
 const STORAGE_KEY = "stn_theme";
 
 export function getStoredTheme() {
