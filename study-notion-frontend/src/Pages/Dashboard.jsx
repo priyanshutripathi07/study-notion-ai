@@ -18,7 +18,7 @@ import QuizPanel from "../ComponentsOne/QuizPanel";
 import SummarizePanel from "../ComponentsOne/SummarizePanel";
 import TargetPanel from "../ComponentsOne/TargetPanel";
 
-import Robot1 from "../assets/robot1.png";
+import Robot1 from "../assets/Robot1.png";
 import Robot2 from "../assets/robot2.png";
 import Robot3 from "../assets/robot3.png";
 
