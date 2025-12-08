@@ -10,9 +10,28 @@ import Dashboard from "./Pages/Dashboard";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Profile from "./Pages/Profile";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
+
+  useEffect(() => {
+    const KEY = "sn_desktop_tip_shown_v2";
+
+    if (!localStorage.getItem(KEY)) {
+      setTimeout(() => {
+        toast.info(
+          "Tip: For the best experience, open this site in desktop mode (or enable 'Desktop site' in your browser).",
+          {
+            autoClose: 12000,
+          }
+        );
+      }, 1200);
+
+      localStorage.setItem(KEY, "true");
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">

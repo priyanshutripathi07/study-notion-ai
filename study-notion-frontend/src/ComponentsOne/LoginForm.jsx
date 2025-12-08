@@ -13,13 +13,8 @@ const LoginForm = ({ setIsLoggedIn }) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  async function submitHandler(event) {
-    event.preventDefault();
-
-    if (!formData.email.trim() || !formData.password.trim()) {
-      toast.error("Please fill in both email and password");
-      return;
-    }
+  async function submitHandler(e) {
+    e.preventDefault();
 
     try {
       const resp = await login({
@@ -27,8 +22,20 @@ const LoginForm = ({ setIsLoggedIn }) => {
         password: formData.password,
       });
 
-      if (resp?.error) {
-        toast.error(resp.error || "Invalid credentials");
+      if (!resp || resp.error) {
+        let msg =
+          "No account found for these details. Please check your email/password or sign up first.";
+
+        if (typeof resp?.error === "string" && resp.error.trim().length > 0) {
+          const raw = resp.error.toLowerCase();
+          if (raw.includes("invalid") || raw.includes("not found")) {
+            // same friendly msg rehne do
+          } else {
+            msg = resp.error;
+          }
+        }
+
+        toast.error(msg, { autoClose: 4000 });
         return;
       }
 
@@ -36,15 +43,15 @@ const LoginForm = ({ setIsLoggedIn }) => {
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
       setIsLoggedIn(true);
-      toast.success("Logged in successfully");
+      toast.success("Logged in successfully ✨", { autoClose: 2500 });
       navigate("/dashboard");
     } catch (err) {
       console.error("Login error", err);
-      const msg =
-        typeof err === "object" && err?.error
-          ? err.error
-          : "Invalid email or password";
-      toast.error(msg);
+
+      toast.error(
+        "No account found for these details. Please check your email/password or sign up first.",
+        { autoClose: 4000 }
+      );
     }
   }
 
